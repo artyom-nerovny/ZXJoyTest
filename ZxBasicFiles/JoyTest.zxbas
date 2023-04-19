@@ -1,0 +1,15 @@
+﻿100 REM ** INTERFACE ZERO
+110 REM ** DEMONSTRATION
+120 CLS
+130 LET x=16: LET y=10
+140 LET oldx=x: LET oldy=y
+150 LET k=IN 61438
+160 LET k=31+INT (k/32)*32-k
+170 IF k>=16 THEN LET k=k-16: LET x=x-(x>0)
+180 IF k>=8 THEN LET k=k-8: LET x=x+(x<31)
+190 IF k>=4 THEN LET k=k-4: LET y=y+(y<21)
+200 IF k>=2 THEN LET k=k-2: LET y=y-(y>0)
+210 INK k+k
+220 PRINT AT oldy,oldx;" "
+230 PRINT AT y,x;"*"
+240 GO TO 140
